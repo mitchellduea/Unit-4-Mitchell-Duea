@@ -1,4 +1,3 @@
-
 import java.util.random;
 import java.util.Scanner;
 
@@ -49,3 +48,38 @@ public static void p1Mechanics() {
 
         while (Roll != 1) {
           //Work on the while statement
+          //Run Code
+          counter += Roll;
+            out.println ("Do you want to roll again? Yes....or No?");
+            answer = scan.nextLine ();
+            while(!(answer.equals("Yes")) && !(answer.equals("No"))){
+                out.println("Please enter: Yes or No");
+                answer = scan.nextLine ();
+              }
+              if (answer.equals("No")) {
+               p1Score += counter;
+               system.out.println ("Oh well looks like player 1 has ended their turn...");
+               system.out.println ("Player one vs player two " + p1Score + "-------" + p2Score);
+               system.out.println ("oh boy its payers two turn to roll...");
+               p2Mechanics ();
+             }
+             Roll = Roll ();
+           system.out.println ("Will you look at that you rolled a" + Roll);
+
+         }
+         if (Roll == 1) {
+            counter = 0;
+            //if they role double ones their score goes back to zero
+            //If they score a 1 they dont gain a score
+          }
+        }
+        system.out.println ("Uh oh player 1 rolled a  '1'.");
+       system.out.println ("Player one vs Player 2 " + p1Score + "-----" + p2Score);
+       system.out.println ("It is now player 2's turn to roll");
+       p2Mechanics ();
+     }
+   }
+system.out.println("Player one has reached 100!!!");
+system.out.println("Player 1 had won by  " + (p1Score - p2Score) + " points!");
+exit (0);
+}
